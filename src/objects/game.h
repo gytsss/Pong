@@ -31,7 +31,7 @@ void mainMenuLogic(int& currentScreen);
 
 void drawRules(Texture2D background, Font font);
 
-void gamePlay( int& winsPlayer1, int& winsPlayer2);
+void gamePlay(int& winsPlayer1, int& winsPlayer2);
 
 void resetFullGame( int& winsPlayer1, int& winsPlayer2);
 
