@@ -6,7 +6,7 @@ extern Ball ball;
 
 void drawBall()
 {
-	DrawCircle(ball.posX, ball.posY, ball.radius, ball.color);
+	DrawCircle(static_cast<int>(ball.posX), static_cast<int>(ball.posY), static_cast<float>(ball.radius), ball.color);
 }
 
 void centerBall()

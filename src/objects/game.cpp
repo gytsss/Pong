@@ -52,7 +52,7 @@ void game()
 			drawMenu(background, font, currentScreen);
 			break;
 		case Game:
-			gamePlay(currentScreen, background, winsPlayer1, winsPlayer2, winText);
+			gamePlay( winsPlayer1, winsPlayer2);
 
 			if (winsPlayer1 == 3)
 			{
@@ -109,8 +109,8 @@ void randomizeBall()
 	} while (randomY != 350 && randomY != -350);
 
 
-	ball.speed.x = randomX;
-	ball.speed.y = randomY;
+	ball.speed.x = static_cast<float>(randomX);
+	ball.speed.y = static_cast<float>(randomY);
 }
 
 void reset()
@@ -193,7 +193,7 @@ void drawMenu(Texture2D background, Font font, int& currentScreen)
 
 void drawMenuText(Font font)
 {
-	float titleWidht = MeasureText("Pong", font.baseSize);
+	float titleWidht = static_cast<float>(MeasureText("Pong", font.baseSize));
 
 	Vector2 mainTextPosition = { GetScreenWidth() / 2 - titleWidht / 2, 100 };
 
@@ -232,7 +232,7 @@ void drawRules(Texture2D background, Font font)
 {
 	const char* rules = "Pong is a game based on table tennis, in which 2 players face each other by moving their paddles.\nA ball will come out from the middle of the screen randomly and the goal of the players is to\nreturn it to prevent the ball from touching the end line.The player who gets 3 points, win the\nmatch.";
 
-	float titleWidht = MeasureText("Rules", font.baseSize);
+	float titleWidht = static_cast<float>(MeasureText("Rules", font.baseSize));
 
 	Vector2 optionsTextPosition = { GetScreenWidth() / 2 - titleWidht / 2, 100 };
 
@@ -252,7 +252,7 @@ void drawRules(Texture2D background, Font font)
 
 }
 
-void gamePlay(int& currentScreen, Texture2D background, int& winsPlayer1, int& winsPlayer2, const char* winText)
+void gamePlay( int& winsPlayer1, int& winsPlayer2)
 {
 	
 	padsMovement();
@@ -270,7 +270,7 @@ void gamePlay(int& currentScreen, Texture2D background, int& winsPlayer1, int& w
 
 	if (ball.posY > GetScreenHeight())
 	{
-		ball.posY = GetScreenHeight();
+		ball.posY = static_cast<float>(GetScreenHeight());
 		ball.speed.y *= -1;
 	}
 

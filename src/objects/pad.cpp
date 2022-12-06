@@ -24,6 +24,6 @@ void padsMovement()
 
 void drawPads()
 {
-	DrawRectangle(pad1.x - pad2.width / 2, pad1.y - pad1.height / 2, pad1.width, pad1.height, WHITE);
-	DrawRectangle(pad2.x - pad2.width / 2, pad2.y - pad2.height / 2, pad2.width, pad2.height, WHITE);
+	DrawRectangle(static_cast<int>(pad1.x - pad2.width / 2), static_cast<int>(pad1.y- pad1.height / 2), static_cast<int>(pad1.width), static_cast<int>(pad1.height), WHITE);
+	DrawRectangle(static_cast<int>(pad2.x - pad2.width / 2), static_cast<int>(pad2.y - pad2.height / 2), static_cast<int>(pad2.width), static_cast<int>(pad2.height), WHITE);
 }
